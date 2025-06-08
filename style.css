@@ -1,0 +1,113 @@
+/* Reset & base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    background-color: #f4f7fd;
+    color: #333;
+  }
+  
+  /* Sidebar */
+  nav{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  }
+
+  
+  nav h4 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #ecf0f1;
+  }
+  
+  nav button {
+    padding: 0.75rem 1rem;
+    background-color: #3498db;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  nav button:hover {
+    background-color: #2980b9;
+  }
+
+  /* Main container */
+  header {
+    padding: 1.5rem 2rem;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    flex-wrap: wrap;
+  }
+  
+  header h2 {
+    font-size: 1.5rem;
+  }
+  
+  /* Task board layout */
+  main {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    overflow-x: auto;
+  }
+  
+  /* Column styles */
+  main > div {
+    background-color: #eaeef6;
+    border-radius: 10px;
+    padding: 1rem;
+    min-width: 250px;
+    flex: 1;
+  }
+  
+  main > div h4 {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  main > div > div:first-child span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 8px;
+    background-color: #bdc3c7;
+  }
+  
+  /* Different colors for status dots */
+  main > div:nth-child(1) > div:first-child span {
+    background-color: #e67e22; /* TODO - Orange */
+  }
+  main > div:nth-child(2) > div:first-child span {
+    background-color: #f1c40f; /* DOING - Yellow */
+  }
+  main > div:nth-child(3) > div:first-child span {
+    background-color: #2ecc71; /* DONE - Green */
+  }
+  
+  /* Task cards */
+  main > div > div:nth-child(2) > div {
+    background-color: white;
+    padding: 1rem;
+    margin-top: 0.75rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    font-size: 0.95rem;
+  }
+  
+  /* Responsive Design */
+@media (max-width: 768px) {
+    .kanban-board {
+      flex-direction: column; /* Stacks columns vertically */
+    }
+  }
